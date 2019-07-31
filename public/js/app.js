@@ -10,10 +10,10 @@ const wait = document.querySelector('#wait')
 
 weatherForm.addEventListener('submit' , (e) => {
     e.preventDefault()
-    const locatin = search.value
+    const location = search.value
     wait.textContent = 'Loading...'
     const data = async () => {
-        const response = await fetch (`/weather?loc=${locatin}`)
+        const response = await fetch (`/weather?loc=${location}`)
         if (response.status === 200) {
             res =  await response.json()
             if (res.error) {
